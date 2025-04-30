@@ -1,5 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import profile from "./assets/images/img.jpg"; 
+import portfolio from "./assets/images/portfolio.jpg";
+import  AI from "./assets/images/AI.jpg";
+import cyber from "./assets/images/cyber.jpg";
+import p from "./assets/images/p.jpg";
+import signpost from "./assets/images/signpost.jpg";
+import photo from "./assets/images/photo.jpg";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaFigma, FaNodeJs, FaUsers, FaPhone, FaLinkedin, FaGit, FaEnvelope, FaLock } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiTailwindcss } from "react-icons/si";
 import ContactForm from "./components/ContactForm";
@@ -101,42 +107,42 @@ const navigate = useNavigate();
       title: "Portfolio",
       description: "Personal Portfolio Website",
       duration: "Personal project / 1 month",
-      image: "/src/assets/images/portfolio.jpg",
+      image: portfolio,
     },
     {
       id: "02",
       title: "Cinematica",
       description: "Schedule Booking Website for Cinemas",
       duration: "Team project / 3 months",
-      image: "/src/assets/images/p.jpg",
+      image:p,
     },
     {
         id: "03",
         title: "CinemaMate",
         description: "Mobile App for Cinema Scheduling",
         duration: "Team project / 3 months",
-        image: "/src/assets/images/photo.jpg",
+        image: photo,
       },
      
       {
         id: "05",
         title: "Edir",
         description: "Digital Platform for Edir Management ",
-        image: "/src/assets/images/signpost.jpg",
+        image: signpost,
         duration: "Team project / 3 months",
       },
       {
         id: "06",
         title: "DH",
         description: "Secure Client Server Communication",
-        image: "/src/assets/images/cyber.jpg",
+        image: cyber,
         duration: "Personal project / 1 month", 
       },
       {
         id: "07",
         title: "Machine_Learning",
         description: "Accident severity prediction with ML models",
-        image: "/src/assets/images/AI.jpg",
+        image: AI,
         duration: "Team project / 1 month", 
       },
     
