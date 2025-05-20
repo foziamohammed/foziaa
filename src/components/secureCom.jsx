@@ -11,20 +11,21 @@ export default function Portfolio() {
           My Portfolio
         </h1>
         <p className="text-gray-800 text-base sm:text-xl leading-relaxed font-poppins tracking-wide mb-6 sm:mb-8">
-          My portfolio website is a modern, responsive, and visually appealing platform designed to showcase my skills, projects,
-          and experience as a software engineer. It features an intuitive user interface with seamless navigation, allowing visitors 
-          to explore my work, technical expertise, and achievements efficiently.  
+         Secure Real-Time Messaging System
+I developed an end-to-end encrypted chat application that enables secure communication between users. The system features AES-256 encryption 
+for all messages, with unique initialization vectors for each transmission to ensure maximum security. Built on a Node.js/Express backend with 
+WebSocket integration, it provides real-time messaging capabilities while maintaining message persistence through MongoDB. The platform includes 
+JWT authentication for secure access control and a responsive React frontend with intuitive chat interfaces. Designed with security as the top 
+priority, the architecture prevents message interception by encrypting all data before transmission and only decrypting it at the recipient's device. 
+This project demonstrates my ability to implement complex security protocols while maintaining usability and performance in real-time communication systems.
           <br /><br />
-          Built using HTML, CSS, JavaScript, and React, the website ensures fast performance and responsiveness across all devices. 
-          It includes sections for about me, projects, skills, and contact information, where I share insights on software development
-          and UI/UX design. With a focus on clean design, accessibility, and scalability, my portfolio serves as a 
-          professional online presence, highlighting my capabilities and attracting potential collaborators, employers, or clients.
+       
         </p>
 
         {/* GitHub Button */}
         <div className="mt-6 sm:mt-8 flex justify-center">
           <a
-            href="https://github.com/foziamohammed/portfolio.git" 
+            href="https://github.com/foziamohammed/secure-communication.git" 
             target="_blank"
             rel="noopener noreferrer"
             className="bg-purple-600 text-white py-3 sm:py-4 px-8 sm:px-10 rounded-lg shadow-md text-lg sm:text-xl font-poppins tracking-wide hover:bg-purple-700 transition-all duration-300 ease-in-out"

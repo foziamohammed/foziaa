@@ -145,6 +145,13 @@ const navigate = useNavigate();
         image: AI,
         duration: "Team project / 1 month", 
       },
+       {
+        id: "08",
+        title: "Secure_communication",
+        description: "Secure end-to-end encrypted real-time messaging platform with authentication",
+        image: AI,
+        duration: "Team project / 1 month", 
+      },
     
   ];
   
@@ -344,64 +351,7 @@ const navigate = useNavigate();
   <div className="w-full h-[1.3px] bg-gradient-to-r from-gray-500 via-gray-300 to-gray-500"></div>
   <p>....</p>
 </section>
-
-<div className="bg-gradient-to-b from-gray-900 to-black text-white py-12 px-6 text-center">
-      <h2 className="text-3xl sm:text-4xl font-bold">Let's Connect</h2>
-      <p className="text-gray-400 mt-2 text-base sm:text-lg">
-        Feel free to reach out for collaborations.
-      </p>
-
-      <div className="flex flex-wrap justify-center gap-6 mt-8">
-        {/* Email */}
-        <div className="bg-gray-900 p-6 rounded-2xl flex flex-col items-center w-full sm:w-64">
-          <FaEnvelope size={32} className="text-gray-300 mb-3" />
-          <h3 className="text-lg font-semibold">Email</h3>
-          <p className="text-gray-400 mt-1 break-all">foziam139@gmail.com</p>
-        </div>
-
-        {/* Phone */}
-        <div className="bg-gray-900 p-6 rounded-2xl flex flex-col items-center w-full sm:w-64">
-          <FaPhone size={32} className="text-gray-300 mb-3" />
-          <h3 className="text-lg font-semibold">Phone</h3>
-          <p className="text-gray-400 mt-1">+251 944 353 025</p>
-        </div>
-
-        {/* LinkedIn */}
-        <div className="bg-gray-900 p-6 rounded-2xl flex flex-col items-center w-full sm:w-64 hover:bg-gray-800 transition-all duration-300">
-          <a
-            href="https://www.linkedin.com/in/fozia-mohammed-50132730b/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center"
-          >
-            <FaLinkedin
-              size={32}
-              className="text-gray-300 mb-3 hover:text-blue-500 transition duration-300"
-            />
-            <h3 className="text-lg font-semibold">LinkedIn</h3>
-            <p className="text-gray-400 mt-1">/fozia-mohammed</p>
-          </a>
-        </div>
-
-        {/* GitHub */}
-        <div className="bg-gray-900 p-6 rounded-2xl flex flex-col items-center w-full sm:w-64 hover:bg-gray-800 transition-all duration-300">
-          <a
-            href="https://github.com/foziamohammed"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center"
-          >
-            <FaGit
-              size={32}
-              className="text-gray-300 mb-3 hover:text-gray-400 transition duration-300"
-            />
-            <h3 className="text-lg font-semibold">GitHub</h3>
-            <p className="text-gray-400 mt-1">/foziamohammed</p>
-          </a>
-        </div>
-      </div>
-    </div>
-      </div>
+</div>
     );
   }
   
