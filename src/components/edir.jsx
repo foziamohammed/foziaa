@@ -12,10 +12,9 @@ export default function Edir() {
         </h1>
         <p className="text-gray-800 text-base sm:text-xl leading-relaxed font-poppins tracking-wide mb-6 sm:mb-8">
           The Idir Management Platform is a comprehensive solution designed to streamline the operations of an Idir community. 
-          It allows members to register, manage their profiles, and make digital contributions to the Idir fund, with a transparent history of their contributions.
-          Administrators can schedule meetings and events, automatically notifying all members, while also managing funeral fund requests. The platform provides secure 
-          financial transactions, generating receipts and transaction histories for members. Communication is facilitated through secure messaging and discussion forums, ensuring privacy. 
-          Built with scalability, security, and performance in mind, the platform ensures data protection and reliability, even during high-demand periods. 
+          It allows members to register, manage their profiles.
+          Administrators can schedule meetings and events, automatically notifying all members, while also managing funeral fund requests.
+          Built with scalability, security, and performance in mind, the platform ensures data protection and reliability. 
           Its intuitive interface caters to users of varying technical abilities, offering a seamless and efficient experience for both members and administrators.
         </p>
 
