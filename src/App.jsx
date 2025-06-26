@@ -7,6 +7,8 @@ import Portfolio from "./components/portfolio";
 import DH from "./components/DH";
 import Machine_Learning from "./components/AI";
 import Threat_Modeling from "./components/threat-model";
+import Stock_Management from "./components/stockManagement";
+import Secure_communication from "./components/secureCom";
 
 
 export default function App() {
@@ -20,6 +22,8 @@ export default function App() {
       <Route path="/DH" element={<DH />} />
       <Route path="/Machine_Learning" element={<Machine_Learning />} />
       <Route path="/Threat_Modeling" element={<Threat_Modeling />} />
+      <Route path="/Stock_Management" element={<Stock_Management />} />
+      <Route path="/Secure_communication" element={<Secure_communication />} />
     </Routes>
   );
 }

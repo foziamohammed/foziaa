@@ -7,6 +7,7 @@ import p from "./assets/images/p.jpg";
 import signpost from "./assets/images/signpost.jpg";
 import hacking from "./assets/images/hacking.png";
 import photo from "./assets/images/photo.jpg";
+import book from "./assets/images/book.jpg";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaFigma, FaNodeJs, FaUsers, FaPhone, FaLinkedin, FaGithub, FaEnvelope, FaLock } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiTailwindcss } from "react-icons/si";
 import ContactForm from "./components/ContactForm";
@@ -147,6 +148,13 @@ const projects = [
     title: "Secure_communication",
     description: "Secure end-to-end encrypted real-time messaging platform with authentication",
     image: hacking,
+    duration: "Team project / 1 month", 
+  },
+   {
+    id: "09",
+    title: "Stock_Management",
+    description: "Book Inventory and Sales Dashboard",
+    image: book,
     duration: "Team project / 1 month", 
   },
 ];
