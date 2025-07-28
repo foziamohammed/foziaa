@@ -8,6 +8,7 @@ import signpost from "./assets/images/signpost.jpg";
 import hacking from "./assets/images/hacking.png";
 import photo from "./assets/images/photo.jpg";
 import book from "./assets/images/book.jpg";
+import partnership from "./assets/images/partnership.jpg";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaFigma, FaNodeJs, FaUsers, FaPhone, FaLinkedin, FaGithub, FaEnvelope, FaLock } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiTailwindcss } from "react-icons/si";
 import ContactForm from "./components/ContactForm";
@@ -156,6 +157,13 @@ const projects = [
     description: "Book Inventory and Sales Dashboard",
     image: book,
     duration: "Team project / 1 month", 
+  },
+   {
+    id: "10",
+    title: "Partnership",
+    description: "Partnership Management Platform for AAU",
+    image: partnership,
+    duration: "Team project / 3 months", 
   },
 ];
 

@@ -9,6 +9,7 @@ import Machine_Learning from "./components/AI";
 import Threat_Modeling from "./components/threat-model";
 import Stock_Management from "./components/stockManagement";
 import Secure_communication from "./components/secureCom";
+import Partnership from "./components/partnership";
 
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
       <Route path="/Threat_Modeling" element={<Threat_Modeling />} />
       <Route path="/Stock_Management" element={<Stock_Management />} />
       <Route path="/Secure_communication" element={<Secure_communication />} />
+       <Route path="/partnership" element={<Partnership />} />
     </Routes>
   );
 }
