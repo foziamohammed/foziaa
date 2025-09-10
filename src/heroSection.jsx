@@ -216,7 +216,7 @@ export default function HeroSection() {
             <a href="#skills" className="hover:text-purple-600" onClick={() => setIsOpen(false)}>Skills</a>
             <a href="#contact" className="hover:text-purple-600" onClick={() => setIsOpen(false)}>Contact Me</a>
             <a
-              href="/CV/Fozia_Mohammed.pdf"
+              href="/CV/Fozia%20Mohammed.pdf"
               download="Fozia Mohammed.pdf"
               className="bg-purple-600 text-white px-5 py-2 rounded-full hover:bg-purple-700 transition duration-300 mt-4"
             >
@@ -227,7 +227,7 @@ export default function HeroSection() {
         
         <div id='home' className="hidden md:block">
           <a
-            href="/CV/Fozia_Mohammed.pdf"
+            href="/CV/Fozia%20Mohammed.pdf"
             download="Fozia Mohammed.pdf"
             className="bg-purple-600 text-white px-5 py-2 rounded-full hover:bg-purple-700 transition duration-300"
           >
