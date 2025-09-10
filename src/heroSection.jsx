@@ -10,7 +10,7 @@ import photo from "./assets/images/photo.jpg";
 import book from "./assets/images/book.jpg";
 import partnership from "./assets/images/partnership.jpg";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaFigma, FaNodeJs, FaUsers, FaPhone, FaLinkedin, FaGithub, FaEnvelope, FaLock } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiTailwindcss } from "react-icons/si";
+import { SiMongodb, SiExpress, SiTailwindcss, SiTypescript, SiPrisma } from "react-icons/si";
 import ContactForm from "./components/ContactForm";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -18,6 +18,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+
 
 const ProjectCarousel = ({ projects }) => {
   const navigate = useNavigate();
@@ -177,6 +178,9 @@ const skills = [
   { id: 7, name: "Node.js", level: "Experienced", icon: <FaNodeJs className="text-green-400" /> },
   { id: 8, name: "Express.js", level: "Experienced", icon: <SiExpress className="text-white" /> },
   { id: 9, name: "CyberSecurity", level: "Intermediate", icon: <FaLock className="text-yellow-400" /> },
+  { id: 10, name: "Tailwind CSS", level: "Experienced", icon: <SiTailwindcss className="text-blue-400" /> },
+  { id: 11, name: "Prisma", level: "Experienced", icon: <SiPrisma className="text-blue-400" /> },
+  { id: 12, name: "Typescript", level: "Experienced", icon: <SiTypescript className="text-blue-400" /> },
 ];
 
 export default function HeroSection() {

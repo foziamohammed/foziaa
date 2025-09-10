@@ -25,7 +25,7 @@ export default function App() {
       <Route path="/Threat_Modeling" element={<Threat_Modeling />} />
       <Route path="/Stock_Management" element={<Stock_Management />} />
       <Route path="/Secure_communication" element={<Secure_communication />} />
-       <Route path="/partnership" element={<Partnership />} />
+      <Route path="/partnership" element={<Partnership />} />
     </Routes>
   );
 }
