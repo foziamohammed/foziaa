@@ -10,6 +10,7 @@ import Threat_Modeling from "./components/threat-model";
 import Stock_Management from "./components/stockManagement";
 import Secure_communication from "./components/secureCom";
 import Partnership from "./components/partnership";
+import Phishing from "./components/phishing";
 
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
       <Route path="/" element={<HeroSection />} />
       <Route path="/cinematica" element={<Cinematica />} />
       <Route path="/CinemaMate" element={<CinemaMate />} />
+
       <Route path="/Edir" element={<Edir />} />
       <Route path="/Portfolio" element={<Portfolio />} />
       <Route path="/DH" element={<DH />} />
@@ -26,6 +28,7 @@ export default function App() {
       <Route path="/Stock_Management" element={<Stock_Management />} />
       <Route path="/Secure_communication" element={<Secure_communication />} />
       <Route path="/partnership" element={<Partnership />} />
+      <Route path="/Phishing" element={<Phishing />} />
     </Routes>
   );
 }

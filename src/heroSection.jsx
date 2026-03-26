@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import profile from "./assets/images/img.jpg"; 
+import profile from "./assets/images/img.jpg";
 import portfolio from "./assets/images/portfolio.jpg";
 import AI from "./assets/images/AI.jpg";
 import cyber from "./assets/images/cyber.jpg";
@@ -9,6 +9,7 @@ import hacking from "./assets/images/hacking.png";
 import photo from "./assets/images/photo.jpg";
 import book from "./assets/images/book.jpg";
 import partnership from "./assets/images/partnership.jpg";
+import phishingImg from "./assets/images/phishing.png";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaFigma, FaNodeJs, FaUsers, FaPhone, FaLinkedin, FaGithub, FaEnvelope, FaLock } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiTailwindcss, SiTypescript, SiPrisma } from "react-icons/si";
 import ContactForm from "./components/ContactForm";
@@ -136,35 +137,42 @@ const projects = [
     title: "DH",
     description: "Secure Client Server Communication",
     image: cyber,
-    duration: "Personal project / 1 month", 
+    duration: "Personal project / 1 month",
   },
   {
     id: "07",
-    title: "Machine_Learning",
-    description: "Accident severity prediction with ML models",
-    image: AI,
-    duration: "Team project / 1 month", 
+    title: "Phishing",
+    description: " Phishing detection Browser Extension",
+    image: phishingImg,
+    duration: "Group project / 2 months",
   },
   {
     id: "08",
+    title: "Machine_Learning",
+    description: "Accident severity prediction with ML models",
+    image: AI,
+    duration: "Team project / 1 month",
+  },
+  {
+    id: "09",
     title: "Secure_communication",
     description: "Secure end-to-end encrypted real-time messaging platform with authentication",
     image: hacking,
-    duration: "Team project / 1 month", 
+    duration: "Team project / 1 month",
   },
-   {
-    id: "09",
+  {
+    id: "10",
     title: "Stock_Management",
     description: "Book Inventory and Sales Dashboard",
     image: book,
-    duration: "Team project / 1 month", 
+    duration: "Team project / 1 month",
   },
-   {
-    id: "10",
+  {
+    id: "11",
     title: "Partnership",
     description: "Partnership Management Platform for AAU",
     image: partnership,
-    duration: "Team project / 3 months", 
+    duration: "Team project / 3 months",
   },
 ];
 
@@ -192,7 +200,7 @@ export default function HeroSection() {
       {/* Navbar */}
       <nav className="max-w-6xl mx-auto flex justify-between items-center py-6 px-6 relative">
         <h1 className="text-2xl font-bold">Fozia.</h1>
-        
+
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 text-lg">
           <a href="#home" className="hover:text-purple-600">Home</a>
@@ -201,12 +209,12 @@ export default function HeroSection() {
           <a href="#skills" className="hover:text-purple-600">Skills</a>
           <a href="#contact" className="hover:text-purple-600">Contact Me</a>
         </div>
-        
+
         {/* Mobile Menu Button */}
         <button className="md:hidden text-2xl" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FiX /> : <FiMenu />}
         </button>
-        
+
         {/* Mobile Menu */}
         {isOpen && (
           <div className="absolute top-16 left-0 w-full bg-gray-900 text-white flex flex-col items-center space-y-6 py-6 md:hidden shadow-lg z-50">
@@ -224,7 +232,7 @@ export default function HeroSection() {
             </a>
           </div>
         )}
-        
+
         <div id='home' className="hidden md:block">
           <a
             href="/CV/Fozia%20Mohammed.pdf"
@@ -241,7 +249,7 @@ export default function HeroSection() {
         <h2 className="text-4xl md:text-5xl font-bold">
           I'm <span className="text-purple-600">Fozia,</span> building secure, user-friendly web apps and UI to boost your product's value.
         </h2>
-  
+
         {/* Image and Skills */}
         <div className="relative mt-10">
           <img
@@ -249,20 +257,20 @@ export default function HeroSection() {
             alt="Fozia"
             className="w-64 h-64 md:w-80 md:h-80 rounded-full grayscale opacity-90 mx-auto"
           />
-  
+
           {/* Floating Skill Tags */}
           <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-12">
             <div className="bg-white px-4 py-2 rounded-full shadow-lg text-sm font-semibold">
               Fullstack <br /> Developer <br />
             </div>
           </div>
-  
+
           <div className="absolute right-0 top-1/4 transform -translate-y-1/2 translate-x-12">
             <div className="bg-white px-4 py-2 rounded-full shadow-lg text-sm font-semibold">
               UI Designer <br />
             </div>
           </div>
-            
+
           <div className="absolute right-10 top-[90%] transform -translate-y-1/2 translate-x-12">
             <div className="bg-white px-4 py-2 rounded-full shadow-lg text-sm font-semibold">
               Cyber Security<br />
@@ -270,17 +278,17 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-  
+
       {/* Experience Section */}
       <section id='about' className="bg-gray-900 text-white mt-16 py-14 px-6 rounded-t-2xl shadow-lg">
         <div className="max-w-6xl mx-auto text-center">
           {/* Main Introduction */}
           <h2 className="text-4xl font-semibold">About Me</h2>
           <p className="text-gray-300 mt-4 leading-relaxed">
-            Hi, I'm Fozia! A passionate and detail-oriented Software Engineer & UI/UX Designer. I specialize in 
-            crafting scalable web applications and intuitive, visually appealing interfaces. With expertise in 
-            React, Tailwind CSS, MongoDB, and Figma, I blend functionality with great user experiences. 
-            Currently pursuing my studies at Addis Ababa University, 
+            Hi, I'm Fozia! A passionate and detail-oriented Software Engineer & UI/UX Designer. I specialize in
+            crafting scalable web applications and intuitive, visually appealing interfaces. With expertise in
+            React, Tailwind CSS, MongoDB, and Figma, I blend functionality with great user experiences.
+            Currently pursuing my studies at Addis Ababa University,
             I enjoy solving real-world problems through technology. Let's build something amazing together!
           </p>
 
@@ -320,7 +328,7 @@ export default function HeroSection() {
       <section id='projects'>
         <ProjectCarousel projects={projects} />
       </section>
-      
+
       {/* Skills Section */}
       <section id='skills'>
         <div className="bg-gray-900 text-white py-16 px-6">
@@ -336,12 +344,12 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-       
+
       {/* Contact Form Section */}
       <section id='contact' className="bg-gray-900">
         <ContactForm />
       </section>
-     
+
       {/* Separator */}
       <section className="bg-gray-900">
         <p>....</p>
