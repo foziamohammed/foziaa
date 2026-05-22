@@ -1,35 +1,92 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { FaGithub, FaArrowLeft, FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
+import portfolioImg from "../assets/images/portfolio.jpg";
+
+const techStack = [
+  { icon: <FaHtml5 className="text-orange-400" />, label: "HTML5" },
+  { icon: <FaCss3Alt className="text-blue-400" />, label: "CSS3" },
+  { icon: <FaJs className="text-yellow-400" />, label: "JavaScript" },
+  { icon: <FaReact className="text-cyan-400" />, label: "React" },
+];
+
+const highlights = [
+  { emoji: "🎨", title: "Modern Design", desc: "Clean, responsive UI with smooth animations and a professional aesthetic." },
+  { emoji: "📱", title: "Fully Responsive", desc: "Optimized for all screen sizes from mobile to large desktop displays." },
+  { emoji: "⚡", title: "Fast Performance", desc: "Built with Vite for lightning-fast load times and optimal performance." },
+  { emoji: "🔗", title: "Easy Navigation", desc: "Intuitive sections for About, Projects, Skills, and Contact." },
+];
 
 export default function Portfolio() {
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-200 flex items-center justify-center p-4 sm:p-8">
-      <div className="bg-white rounded-xl shadow-lg max-w-4xl w-full p-6 sm:p-10 border-t-4 border-purple-600 transition-all duration-500 hover:shadow-2xl relative">
-        {/* Subtle decorative line */}
-        <div className="absolute top-0 left-0 w-16 h-1 bg-purple-300 rounded-full -translate-y-4"></div>
+    <div className="min-h-screen bg-gray-950 text-white">
+      {/* Hero Banner */}
+      <div className="relative h-72 md:h-96 overflow-hidden">
+        <img src={portfolioImg} alt="Portfolio" className="w-full h-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-950/60 to-gray-950" />
+        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-16 pb-10">
+          <span className="text-purple-400 text-sm font-semibold uppercase tracking-widest mb-2">Personal Project · 1 Month</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white">My Portfolio</h1>
+        </div>
+        <button
+          onClick={() => navigate(-1)}
+          className="absolute top-6 left-6 flex items-center gap-2 text-gray-300 hover:text-white bg-gray-900/70 hover:bg-gray-800 px-4 py-2 rounded-full transition-all duration-200 text-sm"
+        >
+          <FaArrowLeft /> Back
+        </button>
+      </div>
 
-        <h1 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-6 sm:mb-8">
-          My Portfolio
-        </h1>
-        <p className="text-gray-800 text-base sm:text-xl leading-relaxed font-poppins tracking-wide mb-6 sm:mb-8">
-          My portfolio website is a modern, responsive, and visually appealing platform designed to showcase my skills, projects,
-          and experience as a software engineer. It features an intuitive user interface with seamless navigation, allowing visitors 
-          to explore my work, technical expertise, and achievements efficiently.  
-          <br /><br />
-          Built using HTML, CSS, JavaScript, and React, the website ensures fast performance and responsiveness across all devices. 
-          It includes sections for about me, projects, skills, and contact information, where I share insights on software development
-          and UI/UX design. With a focus on clean design, accessibility, and scalability, my portfolio serves as a 
-          professional online presence, highlighting my capabilities and attracting potential collaborators, employers, or clients.
-        </p>
+      {/* Content */}
+      <div className="max-w-4xl mx-auto px-6 md:px-12 py-12">
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-3 mb-10">
+          {techStack.map((t) => (
+            <span key={t.label} className="flex items-center gap-2 bg-gray-800 border border-gray-700 px-4 py-2 rounded-full text-sm font-medium text-gray-200">
+              {t.icon} {t.label}
+            </span>
+          ))}
+        </div>
 
-        {/* GitHub Button */}
-        <div className="mt-6 sm:mt-8 flex justify-center">
+        {/* Description */}
+        <div className="mb-10">
+          <h2 className="text-xl font-semibold text-purple-400 mb-4">Overview</h2>
+          <p className="text-gray-300 leading-relaxed text-base md:text-lg">
+            My portfolio website is a modern, responsive, and visually appealing platform designed to showcase my skills,
+            projects, and experience as a software engineer. It features an intuitive user interface with seamless navigation,
+            allowing visitors to explore my work, technical expertise, and achievements efficiently.
+          </p>
+          <p className="text-gray-300 leading-relaxed text-base md:text-lg mt-4">
+            Built using HTML, CSS, JavaScript, and React, the website ensures fast performance and responsiveness across all
+            devices. It includes sections for About Me, Projects, Skills, and Contact — serving as a professional online
+            presence that highlights my capabilities and attracts potential collaborators, employers, or clients.
+          </p>
+        </div>
+
+        {/* Highlights */}
+        <div className="mb-12">
+          <h2 className="text-xl font-semibold text-purple-400 mb-6">Key Highlights</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {highlights.map((h) => (
+              <div key={h.title} className="bg-gray-900 border border-gray-800 rounded-xl p-5 hover:border-purple-600 transition-colors duration-200">
+                <span className="text-2xl">{h.emoji}</span>
+                <h3 className="text-white font-semibold mt-2 mb-1">{h.title}</h3>
+                <p className="text-gray-400 text-sm">{h.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="flex justify-center">
           <a
-            href="https://github.com/foziamohammed/portfolio.git" 
+            href="https://github.com/foziamohammed/portfolio.git"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-purple-600 text-white py-3 sm:py-4 px-8 sm:px-10 rounded-lg shadow-md text-lg sm:text-xl font-poppins tracking-wide hover:bg-purple-700 transition-all duration-300 ease-in-out"
+            className="flex items-center gap-3 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg shadow-purple-900/40"
           >
-            Visit GitHub Repository
+            <FaGithub className="text-xl" /> View on GitHub
           </a>
         </div>
       </div>
