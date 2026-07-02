@@ -106,79 +106,79 @@ const ProjectCarousel = ({ projects }) => {
 
 // Soft aesthetic security background — glowing orbs + minimal geometric shapes
 const SecurityBackground = () => {
-  // Soft glowing circles at various positions
+  // Soft glowing orbs — positioned with inline styles, no overflow clip needed
   const orbs = [
-    { size: 320, top: "-80px",  left: "-80px",  color: "rgba(147,51,234,0.07)",  blur: 80  },
-    { size: 220, top: "30%",    left: "80%",    color: "rgba(139,92,246,0.06)",  blur: 60  },
-    { size: 180, top: "70%",    left: "10%",    color: "rgba(168,85,247,0.05)",  blur: 50  },
-    { size: 260, top: "55%",    left: "60%",    color: "rgba(109,40,217,0.06)",  blur: 70  },
-    { size: 140, top: "15%",    left: "45%",    color: "rgba(192,132,252,0.04)", blur: 40  },
+    { size: 400, top: "-100px", left: "-100px",  color: "rgba(147,51,234,0.18)",  blur: 90  },
+    { size: 300, top: "20%",    left: "82%",     color: "rgba(139,92,246,0.15)",  blur: 70  },
+    { size: 250, top: "65%",    left: "5%",      color: "rgba(168,85,247,0.14)",  blur: 60  },
+    { size: 350, top: "50%",    left: "58%",     color: "rgba(109,40,217,0.13)",  blur: 80  },
+    { size: 200, top: "12%",    left: "42%",     color: "rgba(192,132,252,0.12)", blur: 50  },
   ];
 
-  // Minimal SVG lock shapes — just clean outlines, very faint
+  // Lock SVGs — stroke only, no fill
   const locks = [
-    { top: "12%",  left: "7%",   size: 28, opacity: 0.10, delay: "0s",   duration: "8s"  },
-    { top: "22%",  left: "85%",  size: 22, opacity: 0.08, delay: "2s",   duration: "10s" },
-    { top: "65%",  left: "4%",   size: 18, opacity: 0.07, delay: "1s",   duration: "9s"  },
-    { top: "75%",  left: "88%",  size: 24, opacity: 0.09, delay: "3s",   duration: "11s" },
-    { top: "42%",  left: "92%",  size: 16, opacity: 0.06, delay: "0.5s", duration: "7s"  },
-    { top: "88%",  left: "30%",  size: 20, opacity: 0.07, delay: "1.5s", duration: "9s"  },
+    { top: "10%",  left: "6%",   size: 36, opacity: 0.22, delay: "0s",   dur: "8s"  },
+    { top: "20%",  left: "84%",  size: 28, opacity: 0.18, delay: "2s",   dur: "10s" },
+    { top: "62%",  left: "3%",   size: 24, opacity: 0.16, delay: "1s",   dur: "9s"  },
+    { top: "74%",  left: "87%",  size: 30, opacity: 0.20, delay: "3s",   dur: "11s" },
+    { top: "40%",  left: "91%",  size: 20, opacity: 0.15, delay: "0.5s", dur: "7s"  },
+    { top: "86%",  left: "28%",  size: 26, opacity: 0.17, delay: "1.5s", dur: "9s"  },
   ];
 
-  // Small floating shield outlines
+  // Shield SVGs — stroke only, no fill
   const shields = [
-    { top: "8%",   left: "72%",  size: 20, opacity: 0.08, delay: "1.2s", duration: "9s"  },
-    { top: "50%",  left: "15%",  size: 16, opacity: 0.06, delay: "2.5s", duration: "11s" },
-    { top: "80%",  left: "55%",  size: 18, opacity: 0.07, delay: "0.8s", duration: "8s"  },
-    { top: "35%",  left: "3%",   size: 22, opacity: 0.08, delay: "3.5s", duration: "10s" },
+    { top: "7%",   left: "70%",  size: 26, opacity: 0.20, delay: "1.2s", dur: "9s"  },
+    { top: "48%",  left: "13%",  size: 22, opacity: 0.16, delay: "2.5s", dur: "11s" },
+    { top: "78%",  left: "53%",  size: 24, opacity: 0.18, delay: "0.8s", dur: "8s"  },
+    { top: "33%",  left: "2%",   size: 28, opacity: 0.19, delay: "3.5s", dur: "10s" },
   ];
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
-      {/* Soft glowing orbs */}
+    <>
+      {/* Orbs rendered outside the relative wrapper so they're never clipped */}
       {orbs.map((orb, i) => (
         <div
           key={`orb-${i}`}
-          className="absolute rounded-full"
+          className="absolute rounded-full pointer-events-none"
           style={{
             width: orb.size,
             height: orb.size,
             top: orb.top,
             left: orb.left,
-            background: orb.color,
+            background: `radial-gradient(circle, ${orb.color}, transparent 70%)`,
             filter: `blur(${orb.blur}px)`,
-            transform: "translate(-50%, -50%)",
+            zIndex: 0,
           }}
         />
       ))}
 
-      {/* Minimal lock outlines */}
+      {/* Lock outlines */}
       {locks.map((l, i) => (
         <div
           key={`lock-${i}`}
-          className="absolute animate-float-gentle"
-          style={{ top: l.top, left: l.left, opacity: l.opacity, animationDelay: l.delay, animationDuration: l.duration }}
+          className="absolute pointer-events-none animate-float-gentle"
+          style={{ top: l.top, left: l.left, opacity: l.opacity, animationDelay: l.delay, animationDuration: l.dur, zIndex: 0 }}
         >
-          <svg width={l.size} height={l.size * 1.2} viewBox="0 0 24 30" fill="none" stroke="#a855f7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width={l.size} height={l.size * 1.25} viewBox="0 0 24 30" fill="none" stroke="#a855f7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <rect x="3" y="13" width="18" height="14" rx="3" />
             <path d="M7 13V9a5 5 0 0 1 10 0v4" />
           </svg>
         </div>
       ))}
 
-      {/* Minimal shield outlines */}
+      {/* Shield outlines */}
       {shields.map((s, i) => (
         <div
           key={`shield-${i}`}
-          className="absolute animate-float-gentle"
-          style={{ top: s.top, left: s.left, opacity: s.opacity, animationDelay: s.delay, animationDuration: s.duration }}
+          className="absolute pointer-events-none animate-float-gentle"
+          style={{ top: s.top, left: s.left, opacity: s.opacity, animationDelay: s.delay, animationDuration: s.dur, zIndex: 0 }}
         >
-          <svg width={s.size} height={s.size * 1.15} viewBox="0 0 24 28" fill="none" stroke="#c084fc" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width={s.size} height={s.size * 1.2} viewBox="0 0 24 28" fill="none" stroke="#c084fc" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 2L3 7v7c0 5.25 3.75 10.15 9 11.35C17.25 24.15 21 19.25 21 14V7L12 2z" />
           </svg>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 
@@ -284,14 +284,13 @@ export default function HeroSection() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div id="home" className="bg-gradient-to-b from-white to-purple-900 min-h-screen text-gray-900">
+    <div id="home" className="relative overflow-hidden bg-gradient-to-b from-white to-purple-900 min-h-screen text-gray-900">
 
-      {/* ── Hero wrapper with floating security icons ── */}
-      <div className="relative">
-        <SecurityBackground />
+      {/* Security background — orbs + SVG outlines */}
+      <SecurityBackground />
 
-        {/* Navbar */}
-        <nav className="relative z-10 max-w-6xl mx-auto flex justify-between items-center py-6 px-6">
+      {/* ── Navbar ── */}
+      <nav className="relative z-10 max-w-6xl mx-auto flex justify-between items-center py-6 px-6">
           <h1 className="text-2xl font-bold">Fozia.</h1>
 
           {/* Desktop Menu */}
@@ -337,7 +336,7 @@ export default function HeroSection() {
           </div>
         </nav>
 
-        {/* Hero Section */}
+        {/* Hero content */}
         <section className="relative z-10 max-w-6xl mx-auto flex flex-col items-center text-center mt-16 px-6 pb-20">
           <h2 className="text-4xl md:text-5xl font-bold">
             I'm <span className="text-purple-600">Fozia,</span> building secure, user-friendly web apps and UI to boost your product's value.
@@ -371,8 +370,6 @@ export default function HeroSection() {
             </div>
           </div>
         </section>
-      </div>
-      {/* ── End hero wrapper ── */}
 
       {/* About Section */}
       <section id="about" className="bg-gray-900 text-white py-14 px-6 rounded-t-2xl shadow-lg">
