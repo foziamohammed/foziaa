@@ -11,7 +11,7 @@ import photo from "./assets/images/photo.jpg";
 import book from "./assets/images/book.jpg";
 import partnership from "./assets/images/partnership.jpg";
 import phishingImg from "./assets/images/phishing.png";
-import { FaHtml5, FaJs, FaReact, FaFigma, FaNodeJs, FaUsers, FaPhone, FaLinkedin, FaGithub, FaEnvelope, FaLock, FaShieldAlt, FaTerminal, FaKey, FaEye, FaBug, FaWifi } from "react-icons/fa";
+import { FaHtml5, FaJs, FaReact, FaFigma, FaNodeJs, FaUsers, FaPhone, FaLinkedin, FaGithub, FaEnvelope, FaLock, FaShieldAlt, FaTerminal } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiTailwindcss, SiTypescript, SiPrisma } from "react-icons/si";
 import ContactForm from "./components/ContactForm";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -104,32 +104,78 @@ const ProjectCarousel = ({ projects }) => {
   );
 };
 
-// Floating security icons scattered in the hero background
+// Soft aesthetic security background — glowing orbs + minimal geometric shapes
 const SecurityBackground = () => {
-  const icons = [
-    { Icon: FaLock,      size: "text-5xl",  top: "8%",   left: "4%",   delay: "0s",    opacity: "opacity-[0.08]" },
-    { Icon: FaShieldAlt, size: "text-7xl",  top: "15%",  left: "88%",  delay: "1.4s",  opacity: "opacity-[0.06]" },
-    { Icon: FaKey,       size: "text-4xl",  top: "40%",  left: "93%",  delay: "0.6s",  opacity: "opacity-[0.09]" },
-    { Icon: FaTerminal,  size: "text-6xl",  top: "60%",  left: "2%",   delay: "2s",    opacity: "opacity-[0.06]" },
-    { Icon: FaEye,       size: "text-5xl",  top: "78%",  left: "84%",  delay: "0.3s",  opacity: "opacity-[0.08]" },
-    { Icon: FaBug,       size: "text-4xl",  top: "52%",  left: "7%",   delay: "1.8s",  opacity: "opacity-[0.05]" },
-    { Icon: FaWifi,      size: "text-3xl",  top: "24%",  left: "76%",  delay: "1s",    opacity: "opacity-[0.07]" },
-    { Icon: FaShieldAlt, size: "text-3xl",  top: "70%",  left: "48%",  delay: "2.5s",  opacity: "opacity-[0.04]" },
-    { Icon: FaLock,      size: "text-4xl",  top: "88%",  left: "18%",  delay: "0.8s",  opacity: "opacity-[0.06]" },
-    { Icon: FaKey,       size: "text-6xl",  top: "5%",   left: "54%",  delay: "1.6s",  opacity: "opacity-[0.05]" },
-    { Icon: FaTerminal,  size: "text-3xl",  top: "44%",  left: "68%",  delay: "3s",    opacity: "opacity-[0.07]" },
-    { Icon: FaEye,       size: "text-4xl",  top: "92%",  left: "64%",  delay: "0.4s",  opacity: "opacity-[0.05]" },
+  // Soft glowing circles at various positions
+  const orbs = [
+    { size: 320, top: "-80px",  left: "-80px",  color: "rgba(147,51,234,0.07)",  blur: 80  },
+    { size: 220, top: "30%",    left: "80%",    color: "rgba(139,92,246,0.06)",  blur: 60  },
+    { size: 180, top: "70%",    left: "10%",    color: "rgba(168,85,247,0.05)",  blur: 50  },
+    { size: 260, top: "55%",    left: "60%",    color: "rgba(109,40,217,0.06)",  blur: 70  },
+    { size: 140, top: "15%",    left: "45%",    color: "rgba(192,132,252,0.04)", blur: 40  },
+  ];
+
+  // Minimal SVG lock shapes — just clean outlines, very faint
+  const locks = [
+    { top: "12%",  left: "7%",   size: 28, opacity: 0.10, delay: "0s",   duration: "8s"  },
+    { top: "22%",  left: "85%",  size: 22, opacity: 0.08, delay: "2s",   duration: "10s" },
+    { top: "65%",  left: "4%",   size: 18, opacity: 0.07, delay: "1s",   duration: "9s"  },
+    { top: "75%",  left: "88%",  size: 24, opacity: 0.09, delay: "3s",   duration: "11s" },
+    { top: "42%",  left: "92%",  size: 16, opacity: 0.06, delay: "0.5s", duration: "7s"  },
+    { top: "88%",  left: "30%",  size: 20, opacity: 0.07, delay: "1.5s", duration: "9s"  },
+  ];
+
+  // Small floating shield outlines
+  const shields = [
+    { top: "8%",   left: "72%",  size: 20, opacity: 0.08, delay: "1.2s", duration: "9s"  },
+    { top: "50%",  left: "15%",  size: 16, opacity: 0.06, delay: "2.5s", duration: "11s" },
+    { top: "80%",  left: "55%",  size: 18, opacity: 0.07, delay: "0.8s", duration: "8s"  },
+    { top: "35%",  left: "3%",   size: 22, opacity: 0.08, delay: "3.5s", duration: "10s" },
   ];
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
-      {icons.map(({ Icon, size, top, left, delay, opacity }, i) => (
+      {/* Soft glowing orbs */}
+      {orbs.map((orb, i) => (
         <div
-          key={i}
-          className={`absolute text-purple-700 ${size} ${opacity} animate-float-icon`}
-          style={{ top, left, animationDelay: delay }}
+          key={`orb-${i}`}
+          className="absolute rounded-full"
+          style={{
+            width: orb.size,
+            height: orb.size,
+            top: orb.top,
+            left: orb.left,
+            background: orb.color,
+            filter: `blur(${orb.blur}px)`,
+            transform: "translate(-50%, -50%)",
+          }}
+        />
+      ))}
+
+      {/* Minimal lock outlines */}
+      {locks.map((l, i) => (
+        <div
+          key={`lock-${i}`}
+          className="absolute animate-float-gentle"
+          style={{ top: l.top, left: l.left, opacity: l.opacity, animationDelay: l.delay, animationDuration: l.duration }}
         >
-          <Icon />
+          <svg width={l.size} height={l.size * 1.2} viewBox="0 0 24 30" fill="none" stroke="#a855f7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="13" width="18" height="14" rx="3" />
+            <path d="M7 13V9a5 5 0 0 1 10 0v4" />
+          </svg>
+        </div>
+      ))}
+
+      {/* Minimal shield outlines */}
+      {shields.map((s, i) => (
+        <div
+          key={`shield-${i}`}
+          className="absolute animate-float-gentle"
+          style={{ top: s.top, left: s.left, opacity: s.opacity, animationDelay: s.delay, animationDuration: s.duration }}
+        >
+          <svg width={s.size} height={s.size * 1.15} viewBox="0 0 24 28" fill="none" stroke="#c084fc" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 2L3 7v7c0 5.25 3.75 10.15 9 11.35C17.25 24.15 21 19.25 21 14V7L12 2z" />
+          </svg>
         </div>
       ))}
     </div>
