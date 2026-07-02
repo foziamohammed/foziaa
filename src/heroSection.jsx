@@ -191,6 +191,34 @@ const projects = [
     image: portfolio,
   },
   {
+    id: "11",
+    title: "Partnership",
+    description: "Partnership Management Platform for AAU",
+    image: partnership,
+    duration: "Team project / 3 months",
+  },
+    {
+    id: "03",
+    title: "Phishing",
+    description: "Phishing detection Browser Extension",
+    image: phishingImg,
+    duration: "Group project / 2 months",
+  },
+   {
+    id: "12",
+    title: "ModIntel",
+    description: "AI-Enhanced WAF combining rule-based detection with ML inference for smart threat analysis",
+    image: cyber1,
+    duration: "Personal project",
+  },
+  {
+    id: "08",
+    title: "Machine_Learning",
+    description: "Accident severity prediction with ML models",
+    image: AI,
+    duration: "Team project / 1 month",
+  },
+  {
     id: "02",
     title: "Cinematica",
     description: "Schedule Booking Website for Cinemas",
@@ -218,20 +246,8 @@ const projects = [
     image: cyber,
     duration: "Personal project / 1 month",
   },
-  {
-    id: "07",
-    title: "Phishing",
-    description: "Phishing detection Browser Extension",
-    image: phishingImg,
-    duration: "Group project / 2 months",
-  },
-  {
-    id: "08",
-    title: "Machine_Learning",
-    description: "Accident severity prediction with ML models",
-    image: AI,
-    duration: "Team project / 1 month",
-  },
+
+  
   {
     id: "09",
     title: "Secure_communication",
@@ -245,20 +261,6 @@ const projects = [
     description: "Book Inventory and Sales Dashboard",
     image: book,
     duration: "Team project / 1 month",
-  },
-  {
-    id: "11",
-    title: "Partnership",
-    description: "Partnership Management Platform for AAU",
-    image: partnership,
-    duration: "Team project / 3 months",
-  },
-  {
-    id: "12",
-    title: "ModIntel",
-    description: "AI-Enhanced WAF combining rule-based detection with ML inference for smart threat analysis",
-    image: cyber1,
-    duration: "Personal project",
   },
 ];
 
@@ -410,9 +412,9 @@ export default function HeroSection() {
 
             <div className="bg-gray-800 p-6 rounded-xl shadow-md w-72 border border-green-900/50">
               <span className="text-green-400 text-3xl">🔐</span>
-              <h3 className="text-2xl font-medium mt-3 text-green-300">Cybersecurity</h3>
+              <h3 className="text-2xl font-medium mt-3">Cybersecurity</h3>
               <p className="text-gray-400 mt-2">
-                Passionate about building secure systems — from encrypted communications to threat intelligence and phishing detection.
+                Passionate about building secure systems. From encrypted communications to phishing detection.
               </p>
             </div>
           </div>
