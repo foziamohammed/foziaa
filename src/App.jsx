@@ -11,6 +11,7 @@ import Stock_Management from "./components/stockManagement";
 import Secure_communication from "./components/secureCom";
 import Partnership from "./components/partnership";
 import Phishing from "./components/phishing";
+import ModIntel from "./components/modintel";
 
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
       <Route path="/Secure_communication" element={<Secure_communication />} />
       <Route path="/partnership" element={<Partnership />} />
       <Route path="/Phishing" element={<Phishing />} />
+      <Route path="/ModIntel" element={<ModIntel />} />
     </Routes>
   );
 }

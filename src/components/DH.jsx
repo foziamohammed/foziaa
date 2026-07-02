@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaGithub, FaArrowLeft, FaJava, FaLock } from "react-icons/fa";
 import cyberImg from "../assets/images/cyber.jpg";
@@ -18,6 +18,7 @@ const highlights = [
 
 export default function DH() {
   const navigate = useNavigate();
+  useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">

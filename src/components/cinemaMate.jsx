@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaGithub, FaArrowLeft, FaNodeJs } from "react-icons/fa";
 import { SiFlutter, SiDart, SiFirebase } from "react-icons/si";
@@ -20,6 +20,7 @@ const highlights = [
 
 export default function CinemaMate() {
   const navigate = useNavigate();
+  useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">

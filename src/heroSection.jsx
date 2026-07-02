@@ -3,6 +3,7 @@ import profile from "./assets/images/img.jpg";
 import portfolio from "./assets/images/portfolio.jpg";
 import AI from "./assets/images/AI.jpg";
 import cyber from "./assets/images/cyber.jpg";
+import cyber1 from "./assets/images/cyber1.jpg";
 import p from "./assets/images/p.jpg";
 import signpost from "./assets/images/signpost.jpg";
 import hacking from "./assets/images/hacking.png";
@@ -10,19 +11,24 @@ import photo from "./assets/images/photo.jpg";
 import book from "./assets/images/book.jpg";
 import partnership from "./assets/images/partnership.jpg";
 import phishingImg from "./assets/images/phishing.png";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaFigma, FaNodeJs, FaUsers, FaPhone, FaLinkedin, FaGithub, FaEnvelope, FaLock } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaFigma, FaNodeJs, FaUsers, FaPhone, FaLinkedin, FaGithub, FaEnvelope, FaLock, FaShieldAlt, FaTerminal, FaBug } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiTailwindcss, SiTypescript, SiPrisma } from "react-icons/si";
 import ContactForm from "./components/ContactForm";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
 
 const ProjectCarousel = ({ projects }) => {
   const navigate = useNavigate();
+
+  const handleViewProject = (title) => {
+    navigate(`/${title.replace(/\s+/g, '')}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="bg-gray-900 py-12 relative">
@@ -55,7 +61,7 @@ const ProjectCarousel = ({ projects }) => {
               <p className="text-gray-600 flex-grow">{project.description}</p>
               <button
                 className="mt-4 bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors"
-                onClick={() => navigate(`/${project.title.replace(/\s+/g, '')}`)}
+                onClick={() => handleViewProject(project.title)}
               >
                 See More
               </button>
@@ -99,6 +105,52 @@ const ProjectCarousel = ({ projects }) => {
           font-weight: bold;
         }
       `}</style>
+    </div>
+  );
+};
+
+// Enhanced security ticker strip with glowing effect
+const SecurityTicker = () => {
+  const items = [
+    { icon: "🔐", text: "AES-256 Encryption" },
+    { icon: "🛡️", text: "Zero Trust Architecture" },
+    { icon: "🔍", text: "Threat Intelligence" },
+    { icon: "🧠", text: "ML-Based Detection" },
+    { icon: "🔑", text: "JWT Authentication" },
+    { icon: "⚡", text: "Real-Time Monitoring" },
+    { icon: "�", text: "WAF + OWASP CRS" },
+    { icon: "🔒", text: "End-to-End Encryption" },
+    { icon: "🎯", text: "Phishing Detection" },
+    { icon: "📡", text: "OSINT Analysis" },
+    { icon: "🐳", text: "Docker Security" },
+    { icon: "🔥", text: "Firewall Protection" },
+  ];
+
+  return (
+    <div className="relative bg-gradient-to-r from-gray-950 via-gray-900 to-gray-950 border-y border-green-500/30 overflow-hidden py-3 select-none">
+      {/* Subtle scanline overlay */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none" 
+           style={{
+             backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, #00ff88 2px, #00ff88 4px)'
+           }}
+      />
+      
+      {/* Animated gradient glow */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-500/5 to-transparent animate-shimmer pointer-events-none" />
+      
+      <div className="flex animate-marquee whitespace-nowrap">
+        {[...items, ...items, ...items].map((item, i) => (
+          <div
+            key={i}
+            className="inline-flex items-center gap-2 mx-8 px-4 py-1.5 bg-gray-900/50 border border-green-500/20 rounded-full backdrop-blur-sm hover:border-green-400/40 hover:bg-gray-800/60 transition-all duration-300"
+          >
+            <span className="text-lg">{item.icon}</span>
+            <span className="text-green-400 text-sm font-mono font-medium tracking-wide">
+              {item.text}
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -174,6 +226,13 @@ const projects = [
     image: partnership,
     duration: "Team project / 3 months",
   },
+  {
+    id: "12",
+    title: "ModIntel",
+    description: "AI-Enhanced WAF combining rule-based detection with ML inference for smart threat analysis",
+    image: cyber1,
+    duration: "Personal project",
+  },
 ];
 
 const skills = [
@@ -189,6 +248,8 @@ const skills = [
   { id: 10, name: "Tailwind CSS", level: "Experienced", icon: <SiTailwindcss className="text-blue-400" /> },
   { id: 11, name: "Prisma", level: "Experienced", icon: <SiPrisma className="text-blue-400" /> },
   { id: 12, name: "Typescript", level: "Experienced", icon: <SiTypescript className="text-blue-400" /> },
+  { id: 13, name: "Threat Intel", level: "Intermediate", icon: <FaShieldAlt className="text-green-400" /> },
+  { id: 14, name: "Penetration Testing", level: "Beginner", icon: <FaTerminal className="text-green-400" /> },
 ];
 
 export default function HeroSection() {
@@ -243,6 +304,9 @@ export default function HeroSection() {
           </a>
         </div>
       </nav>
+
+      {/* Security Ticker */}
+      <SecurityTicker />
 
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto flex flex-col items-center text-center mt-16 px-6">
@@ -318,6 +382,15 @@ export default function HeroSection() {
               <h3 className="text-2xl font-medium mt-3">Problem-Solving</h3>
               <p className="text-gray-400 mt-2">
                 I love tackling real-world challenges by developing innovative solutions using technology.
+              </p>
+            </div>
+
+            {/* Cybersecurity */}
+            <div className="bg-gray-800 p-6 rounded-xl shadow-md w-72 border border-green-900/50">
+              <span className="text-purple-400 text-3xl">🔐</span>
+              <h3 className="text-2xl font-medium mt-3">Cybersecurity</h3>
+              <p className="text-gray-400 mt-2">
+                Passionate about building secure systems. From encrypted communications to phishing detection.
               </p>
             </div>
           </div>

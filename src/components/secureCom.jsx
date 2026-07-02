@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaGithub, FaArrowLeft, FaNodeJs, FaReact, FaLock } from "react-icons/fa";
 import { SiMongodb, SiSocketdotio } from "react-icons/si";
@@ -21,6 +21,9 @@ const highlights = [
 
 export default function Secure_communication() {
   const navigate = useNavigate();
+
+  // Scroll to top when detail page loads
+  useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
